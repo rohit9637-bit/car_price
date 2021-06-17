@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Predict Car Price</title>
+  </head>
+  <body>
+    
+
+  <center style="background-color: rgba(120, 46, 252, 0.4); padding: 10px; color: white;"><div><h2><u>Predict of car price</u></h2></div></center>
+  <div class="container"><div class="container">
+    <form method="POST" action="{{ url_for('predict')}}" enctype="multipart/form-data">
+    <div class="rows" style="background-color: rgba(20, 46, 252, 0.4);">
+    <center>
+        <div class="form-group col-md-8">
+            <table class="table">
+            <tr>
+                <td><label> Year :</label> </td>
+                <td><input type='text' class="form-control" name="Year" placeholder="Ex: 1999, 2000, 2001...">
+                    
+                </td>
+            </tr>
+           
+            <tr><td><label>What is the Showroom Price?(In lakhs) :</label></td> <td><input type='text' class="form-control" name="Present_Price" placeholder="Showroom price"></td></tr>
+
+             <tr><td><label>How Many Kilometers Drived? :</label></td> <td><input type='text' class="form-control" name="Kms_Driven" placeholder="kilometer driven"></td></tr>
+
+             <tr><td><label>How much owners previously had the car(0 or 1 or 3) ?</label></td> <td><input type='text' class="form-control" name="Owner" placeholder="eg 0,1,2"></td></tr>
+
+
+            <tr>
+                <td><label>What Is the Fuel type?:</label></td>
+                <td>
+                    <select class="custom-select" name="Fuel_Type_Petrol" id="cartransmission">
+                        <option selected>Select...fueltype</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="CNG">CNG</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Are you A Dealer or Individual : </label></td>
+                <td>
+                    <select class="custom-select" name="Seller_Type_Individual" id="cartransmission">
+                        <option value="Dealer">Dealer</option>
+                        <option value="Individual">Individual</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Transmission type :</label></td>
+                <td>
+                    <select class="custom-select" name="Transmission_Mannual" id="cartransmission">
+                        <option value="Mannual">Manual Car</option>
+                        <option value="Automatic">Automatic Car</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            <td><center><button type="submit" class="btn btn-primary">Predict</button></center></td></tr>
+            </table>
+        </div>
+
+    </center>
+    </div>
+        </form>
+        <center><h3>{{ prediction_text }}</h3> </center>>
+
+  </div></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
